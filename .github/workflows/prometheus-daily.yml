@@ -1,0 +1,56 @@
+name: Prometheus daily drop
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # 03:30 UTC = 06:30 Africa/Nairobi. Change to your timezone.
+  workflow_dispatch:
+    inputs:
+      brief:
+        description: "Optional brief override (business, service, market)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prometheus-daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check config
+        run: |
+          test -f prometheus.config.yaml || { echo "::error::Add prometheus.config.yaml (copy prometheus.config.example.yaml)"; exit 1; }
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install helpers
+        run: |
+          pip install pyyaml playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Run /prometheus-daily
+        uses: anthropics/claude-code-action@v1
+        with:
+          # Set ONE of these repository secrets: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: "/prometheus-daily ${{ github.event.inputs.brief }}"
+          claude_args: >-
+            --max-turns 80
+            --allowedTools "WebSearch,WebFetch,Read,Write,Edit,Glob,Grep,Bash,Task,Skill"
+
+      - name: Commit outputs
+        run: |
+          git config user.name "prometheus-bot"
+          git config user.email "prometheus-bot@users.noreply.github.com"
+          git add output/ brand/brand.json 2>/dev/null || true
+          git diff --cached --quiet && echo "Nothing to commit" || git commit -m "Prometheus daily run $(date -u +%Y-%m-%d)"
+          git push

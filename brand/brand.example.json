@@ -1,0 +1,21 @@
+{
+  "name": "Acme Dental",
+  "tagline": "Smiles that last",
+  "colors": {
+    "primary": "#0F2A44",
+    "secondary": "#1F5F8B",
+    "accent": "#F2C14E",
+    "background": "#FBF8F2",
+    "text": "#0F2A44"
+  },
+  "fonts": { "heading": "Poppins", "body": "Inter" },
+  "logo": "logo.png",
+  "handle": "@acmedental",
+  "website": "acmedental.example",
+  "voice": {
+    "tone": ["warm", "plain-spoken", "confident", "a little cheeky"],
+    "do": ["use second person", "short sentences", "local references"],
+    "dont": ["medical jargon without explanation", "fear-mongering", "emoji walls"]
+  },
+  "visual_rules": ["lots of whitespace", "real people, never stock smiles", "accent colour only for emphasis"]
+}

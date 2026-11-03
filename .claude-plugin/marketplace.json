@@ -1,0 +1,11 @@
+{
+  "name": "prometheus",
+  "owner": { "name": "NdireS" },
+  "plugins": [
+    {
+      "name": "social-media-planner-prometheus",
+      "source": "./",
+      "description": "Seven skills: Researcher, Undying, Suggester, Outlier and Planner, plus the /prometheus and /prometheus-daily pipelines."
+    }
+  ]
+}

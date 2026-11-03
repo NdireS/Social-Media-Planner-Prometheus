@@ -1,0 +1,46 @@
+# Copy to prometheus.config.yaml and fill in. Any /prometheus arguments override these values.
+business:
+  name: "Acme Dental"
+  service: "teeth whitening and cosmetic dentistry"   # the service being marketed
+  description: "Boutique dental clinic offering same-day whitening"
+  home_market: "Nairobi, Kenya"
+  target_markets: ["Kenya", "East Africa"]
+  timezone: "Africa/Nairobi"
+  language: "English (with Swahili/Sheng where natural)"
+  website: "https://acmedental.example"
+  offer: "Free shade check this month"
+  cta_link: "https://acmedental.example/book"
+  handles:
+    linkedin: ""
+    facebook: ""
+    instagram: "@acmedental"
+    tiktok: "@acmedental"
+    x: ""
+    bluesky: ""
+    youtube: ""
+    telegram: ""
+  known_competitors: []        # optional seeds: ["SmileCo", "BrightTeeth App"]
+
+brand:
+  folder: "brand/"             # drop logo, guidelines, fonts, photos and brand.json here
+
+goals:
+  primary: "awareness"         # awareness | engagement | leads | sales
+  kpis: ["reach", "saves", "profile visits", "bookings"]
+
+platforms: [linkedin, facebook, instagram, tiktok, x, bluesky, youtube, telegram]
+
+undying:
+  multiplier: 2.0              # Doubling Law: never below 2.0
+  benchmark: leader            # leader | top3 | average
+
+outlier:
+  min_share_of_posts: 0.15     # at least 15% of weekly posts go to outlier ideas
+
+schedule:
+  daily_time: "06:30"          # local time for the daily drop
+  weekly_day: "sunday"         # day the full weekly plan is refreshed
+  auto_weekly: true            # daily run triggers /prometheus when the plan is stale
+
+compliance:
+  notes: "Health claims must follow local advertising rules. No before/after without consent."

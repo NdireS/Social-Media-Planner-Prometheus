@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+output/logs/
+# keep generated plans in git by default (the scheduled runs commit them);
+# uncomment to keep them out:
+# output/

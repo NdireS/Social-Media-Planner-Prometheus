@@ -1,0 +1,32 @@
+{
+  "contract": "prometheus.research.v1",
+  "generated_at": "2026-11-03",
+  "_note": "SYNTHETIC SAMPLE DATA for testing the scripts. Not real research.",
+  "business": {"name": "Acme Dental", "service": "teeth whitening", "home_market": "Nairobi, Kenya", "target_markets": ["Kenya"]},
+  "competitors": [
+    {"id": "c1", "name": "Rival Clinic A", "class": "direct", "region": "local",
+     "platforms": {"instagram": {"posts_per_week": 6, "engagement_rate": 0.021}, "tiktok": {"posts_per_week": 4}, "facebook": {"posts_per_week": 5}}},
+    {"id": "c2", "name": "Whitening Kit Brand B", "class": "software", "region": "international",
+     "platforms": {"instagram": {"posts_per_week": 10}, "tiktok": {"posts_per_week": 14}, "youtube": {"posts_per_week": 3}, "x": {"posts_per_week": 12}}},
+    {"id": "c3", "name": "Dental Chain C", "class": "partial", "region": "regional",
+     "platforms": {"linkedin": {"posts_per_week": 3}, "facebook": {"posts_per_week": 7}, "telegram": {"posts_per_week": 2}}}
+  ],
+  "pain_points": [
+    {"id": "p1", "statement": "Results fade in weeks and nobody explains aftercare", "status": "ignored", "mentions": 40, "intensity": 4, "competitor_coverage": 0.1, "relevance": 0.9, "evidence": [{}, {}, {}, {}], "pillar": "education"},
+    {"id": "p2", "statement": "Prices are hidden until you're in the chair", "status": "unsolved", "mentions": 55, "intensity": 4, "competitor_coverage": 0.2, "relevance": 0.8, "evidence": [{}, {}, {}], "pillar": "trust"},
+    {"id": "p3", "statement": "Sensitivity after treatment", "status": "partially_solved", "mentions": 30, "intensity": 3, "competitor_coverage": 0.6, "relevance": 0.7, "evidence": [{}, {}], "pillar": "education"},
+    {"id": "p4", "statement": "Fear of damaging enamel", "status": "partially_solved", "mentions": 25, "intensity": 5, "competitor_coverage": 0.5, "relevance": 0.9, "evidence": [{}, {}, {}, {}, {}], "pillar": "trust"},
+    {"id": "p5", "statement": "Booking takes too long", "status": "solved", "mentions": 12, "intensity": 2, "competitor_coverage": 0.8, "relevance": 0.5, "evidence": [{}], "pillar": "convenience"}
+  ],
+  "trends": [
+    {"id": "t1", "name": "At-home LED kits", "type": "social", "velocity": "rising", "relevance": 0.7, "audience_overlap": 0.8, "competitor_saturation": 0.6, "evidence": [{}, {}, {}], "pillar": "trend"},
+    {"id": "t2", "name": "Wedding season (Dec)", "type": "cultural", "velocity": "rising", "relevance": 0.9, "audience_overlap": 0.7, "competitor_saturation": 0.3, "evidence": [{}, {}], "pillar": "trend"},
+    {"id": "t3", "name": "New cosmetic advertising rules", "type": "regulatory", "velocity": "peak", "relevance": 0.6, "audience_overlap": 0.3, "competitor_saturation": 0.1, "evidence": [{}, {}, {}], "pillar": "trust"}
+  ],
+  "persona": {"name": "Wanjiru", "age": 29, "location": "Nairobi", "top_pain_points": ["p1", "p2"]},
+  "audience_channels": {
+    "instagram": {"share_of_attention": 0.32}, "tiktok": {"share_of_attention": 0.28}, "facebook": {"share_of_attention": 0.15},
+    "youtube": {"share_of_attention": 0.08}, "x": {"share_of_attention": 0.06}, "telegram": {"share_of_attention": 0.05},
+    "linkedin": {"share_of_attention": 0.04}, "bluesky": {"share_of_attention": 0.02}
+  }
+}
